@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=TicTacToe
+comment0.text=\n\ A\ classe\ TicTacToe\ permite\ jogar\ uma\ partida\n\ de\ jogo-da-velha\ entre\ dois\ jogares.\n\ \n\ @author\ Marco\ Mangan\ (marco.mangan@pucrs.br)\ \n\ @version\ 1.0\ (2021-06-04)\n
+comment1.params=
+comment1.target=java.lang.String[][]\ init()
+comment1.text=\n\ Cria\ uma\ matriz\ 3x3,\ preenchida\ com\ espa\u00E7os.\n\ \n\ @return\ a\ matriz\ criada\n
+comment2.params=board
+comment2.target=void\ dump(java.lang.String[][])
+comment2.text=\n\ \n\ @param\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
