@@ -72,10 +72,21 @@ public class TicTacToe
         {
             dump(board);
             System.out.printf("Jogada de: %s\n", player);
-            System.out.print("Informe o valor da linha (0, 1, 2):");
+            System.out.print("Informe o valor da linha (0, 1, 2): ");
             row = teclado.nextInt();
-            System.out.print("Informe o valor da coluna (0, 1, 2):");
+            while (!(row >= 0 && row <= 2))
+            {
+                System.out.print("\tValor inválido. Digite novamente: ");
+                row = teclado.nextInt();
+            }
+            // garantia: row >= 0 && row <= 2
+            System.out.print("Informe o valor da coluna (0, 1, 2): ");
             column = teclado.nextInt();
+            while (!(column >= 0 && column <= 2))
+            {
+                System.out.print("\tValor inválido. Digite novamente: ");
+                column = teclado.nextInt();
+            }
             if (board[row][column].equals(" "))
             {
                 board[row][column] = player;
