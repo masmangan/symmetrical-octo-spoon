@@ -54,13 +54,53 @@ public class TicTacToe
     }
     
     public static boolean fimDeJogo(String[][] board)
+    {        
+        return vitoria(board, "x") || vitoria(board, "o") || cheio(board);
+    }
+   
+    public static boolean vitoria(String[][] board, String player)
     {
-        // TODO: verificar vitória de x
-        // TODO: verificar vitória de y
-        
-        boolean temEspaco = false;
         int i;
         int j;
+        for(i = 0; i < 3; i = i + 1) // i = 0, 1, 2
+        {
+            // player fechou linha i!
+            if (board[i][0].equals(player) && 
+                board[i][1].equals(player) && 
+                board[i][2].equals(player))
+            {
+                return true;
+            }
+        }
+        
+        for(j = 0; j < 3; j = j + 1) // i = 0, 1, 2
+        {        
+            // player fechou coluna j!
+            if (board[0][j].equals(player) && 
+                board[1][j].equals(player) && 
+                board[2][j].equals(player))
+            {
+                return true;
+            }
+        }
+        //  diagonais!!!!
+        if (board[0][0].equals(player) && 
+                board[1][1].equals(player) && 
+                board[2][2].equals(player))
+                return true;
+        if (board[0][2].equals(player) && 
+                board[1][1].equals(player) && 
+                board[2][0].equals(player))
+                return true;                
+        return false;
+    }
+
+    public static boolean cheio(String[][] board)
+    {
+        boolean temEspaco;
+        int i;
+        int j;       
+        temEspaco = false;
         for(i = 0; i < 3; i = i + 1) // i = 0, 1, 2
         {
             for(j = 0; j < 3; j = j + 1) // j = 0, 1, 2
@@ -73,7 +113,7 @@ public class TicTacToe
         }    
         return !temEspaco;
     }
-    
+
     public static void main(String[] args)
     {
         String[][] board;
