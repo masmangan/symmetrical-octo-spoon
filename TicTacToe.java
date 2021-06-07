@@ -1,5 +1,6 @@
 // Direitos Autorais, PUCRS/Escola Politécnica
-// 2021-06-04
+// Início: 2021-06-04
+// Atualização: 2021-06-07
 // https://github.com/masmangan/symmetrical-octo-spoon
 
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
  * de jogo-da-velha entre dois jogares.
  * 
  * @author Marco Mangan (marco.mangan@pucrs.br) 
- * @version 1.0 (2021-06-04)
+ * @version 1.1 (2021-06-07)
  */
 public class TicTacToe
 {
@@ -65,12 +66,15 @@ public class TicTacToe
         board = init();        
         player = "x";
         
+        System.out.printf("Jogo da Velha!\n\n");
         done = false;
         while (!done)
         {
-            // jogo aqui!
             dump(board);
+            System.out.printf("Jogada de: %s\n", player);
+            System.out.print("Informe o valor da linha (0, 1, 2):");
             row = teclado.nextInt();
+            System.out.print("Informe o valor da coluna (0, 1, 2):");
             column = teclado.nextInt();
             if (board[row][column].equals(" "))
             {
