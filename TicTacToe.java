@@ -53,11 +53,31 @@ public class TicTacToe
         }        
     }
     
+    public static boolean fimDeJogo(String[][] board)
+    {
+        // TODO: verificar vitória de x
+        // TODO: verificar vitória de y
+        
+        boolean temEspaco = false;
+        int i;
+        int j;
+        for(i = 0; i < 3; i = i + 1) // i = 0, 1, 2
+        {
+            for(j = 0; j < 3; j = j + 1) // j = 0, 1, 2
+            {
+                if (board[i][j].equals(" "))
+                {
+                    temEspaco = true;
+                }
+            }
+        }    
+        return !temEspaco;
+    }
+    
     public static void main(String[] args)
     {
         String[][] board;
         String player;
-        boolean done;
         int row;
         int column;
         Scanner teclado;
@@ -67,8 +87,7 @@ public class TicTacToe
         player = "x";
         
         System.out.printf("Jogo da Velha!\n\n");
-        done = false;
-        while (!done)
+        while (!fimDeJogo(board))
         {
             dump(board);
             System.out.printf("Jogada de: %s\n", player);
@@ -99,8 +118,9 @@ public class TicTacToe
             {
                 player = "x";        
             }
-        }
-        
+        }        
         teclado.close();
+        dump(board);
+        System.out.print("**Fim de jogo**\n");
     }
 }
